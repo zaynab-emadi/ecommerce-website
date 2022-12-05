@@ -5,7 +5,7 @@ import {
     AdminPanel, Cart, Category, CustomerInfo,
     Dashboard,
     IntroPage,
-    Orders, OrderSubmit, PaymentResult,
+    Orders, OrderSubmit, PageNotFound, PaymentResult,
     ProductDetail,
     ProductsList,
     Stock
@@ -32,6 +32,7 @@ function RoutesIndex() {
                         <Route path="/stock" element={<Stock/>}/>
                         <Route path="/orders" element={<Orders />} />
                     </Route>
+                    <Route path="*" element={<PageNotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </>

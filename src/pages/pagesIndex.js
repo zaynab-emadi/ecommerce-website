@@ -11,3 +11,4 @@ export {OrderSubmit} from "./shop/orderSubmit/orderSubmit";
 export {PaymentResult} from "./shop/paymentResult/paymentResult";
 export {ProductDetail} from "./shop/productDetail/productDetail";
 export {AdminPanel} from "./adminpanel/adminPanel/adminPanel";
+export {PageNotFound} from "./pageNot found/pageNotFound";
