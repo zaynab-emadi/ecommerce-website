@@ -1,6 +1,15 @@
 import React from 'react';
 import {BrowserRouter , Routes , Route} from "react-router-dom";
-import {AdminLogin, Dashboard, IntroPage} from "../pages/pagesIndex";
+import {
+    AdminLogin,
+    AdminPanel, Cart, Category, CustomerInfo,
+    Dashboard,
+    IntroPage,
+    Orders, OrderSubmit, PaymentResult,
+    ProductDetail,
+    ProductsList,
+    Stock
+} from "../pages/pagesIndex";
 
 function RoutesIndex() {
     return (
@@ -8,10 +17,21 @@ function RoutesIndex() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<IntroPage/>}>
-
+                        <Route path="/product/:productId" element={<ProductDetail/>}/>
+                        <Route path="/category/:categoryName" element={<Category/>}/>
+                        <Route path="/cart" element={<Cart/>}/>
+                        <Route path="/orderSubmit" element={<OrderSubmit/>} >
+                            <Route path="/customerInfo" element={<CustomerInfo/>}/>
+                        </Route>
+                        <Route path="/paymentResult" element={<PaymentResult/>} />
                     </Route>
                     <Route path="/loginAdmin" element={<AdminLogin/>}/>
-                    <Route path="/adminPanel/dashboard" element={<Dashboard/>} />
+                    <Route path="/adminPanel" element={<AdminPanel />} >
+                        <Route path="/dashboard" element={<Dashboard/>}/>
+                        <Route path="/productsList" element={<ProductsList/>} />
+                        <Route path="/stock" element={<Stock/>}/>
+                        <Route path="/orders" element={<Orders />} />
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </>
