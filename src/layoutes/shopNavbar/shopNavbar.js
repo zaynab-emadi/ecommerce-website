@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppBar, Box, IconButton, Toolbar} from "@mui/material";
+import {AppBar, Box, IconButton, Toolbar, Tooltip} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from "react-router-dom";
 import Logo from "../../assets/logonomy-1670679421327.jpeg";
@@ -14,11 +14,13 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import LoginIcon from '@mui/icons-material/Login';
+import {useNavigate} from "react-router-dom";
 
 
 
 
 function ShopNavbar() {
+    const navigate = useNavigate();
     return (
         <>
             <Box>
@@ -50,12 +52,16 @@ function ShopNavbar() {
                         </Search>
                         <Box sx={{ flexGrow: 1 }} />
                         <Box sx={IconsBoxSx}>
-                            <IconButton size="large" color="inherit">
+                            <Tooltip title={'cart'} arrow>
+                            <IconButton size="large" color="inherit" onClick={() => {navigate("/cart")}} >
                                 <AddShoppingCartIcon/>
                             </IconButton>
-                            <IconButton size="large" color="inherit" >
+                            </Tooltip>
+                            <Tooltip title={'admin login'} arrow>
+                            <IconButton size="large" color="inherit" onClick={()=> {navigate("/loginAdmin")}}>
                                 <LoginIcon />
                             </IconButton>
+                            </Tooltip>
                         </Box>
                     </Toolbar>
                 </AppBar>
