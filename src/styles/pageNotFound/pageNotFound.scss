@@ -1,4 +1,4 @@
-$button-color : 84B8FF;
+$button-color: 84B8FF;
 
 .container {
   display: flex;
@@ -12,7 +12,7 @@ $button-color : 84B8FF;
     height: 60vh;
   }
   .button {
-   color: $button-color;
+    color: $button-color;
   }
   @media only screen and (max-width: 480px) {
     margin-top: 30%;
